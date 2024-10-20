@@ -1,0 +1,25 @@
+{
+  "name": "report-template-engine",
+  "author": "Nicholas Nguyen <NicholasNguyen8742@gmail.com> (https://github.com/Nicholas-Nguyen8742/)",
+  "description": "A module for storing report templates of various file extensions to be served by api package",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "start:server": "pnpm --filter ./packages/server run watch",
+    "start:reports": "pnpm --filter ./packages/reports run start:dev"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": "20.9.0"
+  },
+  "keywords": [
+    "pnpm",
+    "nvm",
+    "koa",
+    "typescript",
+    "vite",
+    "react-pdf",
+    "pdf",
+    "docx"
+  ]
+}

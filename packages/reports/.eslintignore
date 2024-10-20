@@ -1,0 +1,8 @@
+node_modules
+build
+prebuild.js
+public
+dist/*
+src/SampleData
+src/tests
+.eslintrc.js
