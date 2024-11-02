@@ -4,17 +4,16 @@
   "author": "Nicholas Nguyen <NicholasNguyen8742@gmail.com> (https://github.com/Nicholas-Nguyen8742/)",
   "description": "API server to serve various types of reports (i.e. pdf / docx) w/ typescript, koa",
   "license": "MIT",
-  "types": "./dist/api/server.d.ts",
   "main": "./dist/api/server.js",
+  "type": "module",
   "scripts": {
-    "local:build": "tsc -w",
-    "local:run": "nodemon --watch src -e ts,tsx --exec ts-node ./src/api/server.ts",
-    "build": "tsc",
-    "start": " node ./dist/api/server.js",
-    "watch": "concurrently npm:local:*"
+    "watch": "nodemon --watch src -e ts,tsx --exec tsx src/api/server.ts",
+    "start": "node ./dist/api/server.js"
   },
   "dependencies": {
+    "@api/reports": "workspace:*",
     "@koa/cors": "^5.0.0",
+    "@react-pdf/renderer": "^4.0.0",
     "dotenv": "^16.0.2",
     "koa": "^2.13.4",
     "koa-body": "^6.0.1",
@@ -31,12 +30,13 @@
     "@types/koa-sslify": "^4.0.6",
     "@types/koa-static": "^4.0.4",
     "@types/koa__cors": "^4.0.3",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "concurrently": "^7.6.0",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@8.15.6",

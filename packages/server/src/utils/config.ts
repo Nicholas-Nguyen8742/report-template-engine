@@ -1,5 +1,10 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: `${__dirname}/./../../../../../.env` });
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+dotenv.config({
+  path: `${path.dirname(fileURLToPath(import.meta.url))}/./../../../../.env`
+});
 
 export const {
   PORT,
