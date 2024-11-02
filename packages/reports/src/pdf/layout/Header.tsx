@@ -1,5 +1,7 @@
-import { Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import React from 'react';
+import { Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import theme from '../../utils/styles';
+import logoImage from '../../../public/images/Logo-Icon.png';
 
 export default function Header() {
   return (
@@ -7,7 +9,7 @@ export default function Header() {
       <View style={styles.headerBorder} />
       <View style={styles.headerMain}>
         <View style={styles.headerMainContent}>
-          <Image style={styles.headerLogo} src={'/images/Logo-Icon.png'}/>
+          <Image style={styles.headerLogo} src={logoImage}/>
           <Text style={styles.headerReportName}>{'Title'}</Text>
         </View>
       </View>
@@ -49,7 +51,6 @@ const styles = StyleSheet.create({
   headerReportName: {
     fontSize: '22pt',
     lineHeight: 0.91,
-    fontFamily: 'AauxNext',
     fontWeight: 200,
     width: '180px',
     marginTop: '2px',

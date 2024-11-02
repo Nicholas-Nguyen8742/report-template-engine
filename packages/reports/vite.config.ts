@@ -1,17 +1,34 @@
+import path, { resolve } from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '../', ['VITE_USER_NODE_ENV', 'PORT']);
 
   return {
     build: {
+      lib: {
+        entry: resolve(__dirname, 'src/index.ts'),
+        name: 'reports',
+        formats: ['es', 'cjs', 'umd', 'iife'],
+        fileName: (format) => `index.${format}.js`,
+      },
       emptyOutDir: true,
       minify: 'esbuild',
-      outDir: 'build',
+      outDir: 'dist',
+      target: 'node16',
       chunkSizeWarningLimit: 1600,
       sourcemap: env.VITE_USER_NODE_ENV !== 'production',
       rollupOptions: {
+        external: ['@react-pdf/renderer'],
+        output: {
+          interop: 'auto',
+          globals: {
+            react: 'React',
+            'react-dom': 'ReactDOM',
+          },
+        },
         onwarn(warning, defaultHandler) {
           if (warning.code === 'SOURCEMAP_ERROR') {
             return;
@@ -19,18 +36,28 @@ export default defineConfig(({ mode }) => {
   
           defaultHandler(warning)
         },
-        output: {
-          chunkFileNames: 'js/[name].[hash].js',
-          entryFileNames: 'js/[name].[hash].js',
-          assetFileNames: 'assets/[name].[hash].[ext]',
-          manualChunks: {
-            reactVendor: ['react'],
-          },
+      },
+    },
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, './public'),
+      }
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        define: {
+          global: 'globalThis',
         },
       },
     },
     envDir: '../../',
-    plugins: [react()],
+    plugins: [
+      react(),
+      dts({
+        insertTypesEntry: true,
+        include: ['src', './tsconfig.json'],
+      }),
+    ],
     preview: {
       port: parseInt('3001'),
     },

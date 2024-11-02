@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, Text, View } from '@react-pdf/renderer';
 import { formatFullDate } from '../../utils/format';
 import { DISCLAIMER } from '../../utils/constants';

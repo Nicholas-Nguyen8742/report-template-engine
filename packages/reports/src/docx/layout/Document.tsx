@@ -1,11 +1,9 @@
-import fs from 'fs';
 import { Document, Paragraph, PageOrientation, ImageRun } from 'docx';
 import { table } from './Table';
 import { footer } from './Footer';
+import logoImage from '../../../public/images/Logo-Icon.png';
 
-const logoImageBuffer = fs.readFileSync('/images/Logo-Icon.png');
-
-export const doc = new Document({
+const doc = new Document({
   sections: [{
       properties: {
           page: {
@@ -23,7 +21,7 @@ export const doc = new Document({
       children: [new Paragraph({
         children: [
           new ImageRun({
-            data: logoImageBuffer,
+            data: logoImage,
             type: 'png',
             transformation: {
               width: 150,
@@ -37,3 +35,5 @@ export const doc = new Document({
       },
   }],
 });
+
+export default doc;

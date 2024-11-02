@@ -4,24 +4,32 @@
   "author": "Nicholas Nguyen <NicholasNguyen8742@gmail.com> (https://github.com/Nicholas-Nguyen8742/)",
   "description": "A module for storing report templates of various file extensions to be served by api package",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    "require": "./dist/index.cjs.js",
+    "import": "./dist/index.es.js"
+  },
   "scripts": {
     "start:dev": "vite",
     "build:prod": "tsc && vite build",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.0.0",
     "docx": "^9.0.2",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite-plugin-dts": "^4.3.0"
   },
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^4.3.1",
-    "react-dom": "^18.2.0",
     "typescript": "^4.7.3",
     "vite": "^5.0.0"
   },
