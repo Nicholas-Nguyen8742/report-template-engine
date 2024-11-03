@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Font, View }  from '@react-pdf/renderer';
+import { Document, View }  from '@react-pdf/renderer';
 import { LandscapePage } from '../pdf/layout/Page';
 import Header from '../pdf/layout/Header';
 import Footer from '../pdf/layout/Footer';
@@ -15,4 +15,5 @@ export function LandscapeHeaderFooter() {
     </Document>
   );
 }
+
 export default LandscapeHeaderFooter;

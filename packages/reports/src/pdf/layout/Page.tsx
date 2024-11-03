@@ -2,7 +2,6 @@ import React from 'react';
 import { Page, PageProps } from '@react-pdf/renderer';
 import { PropsWithChildren, ReactElement } from 'react';
 
-
 type PDFPageProps = PropsWithChildren<PageProps>;
 
 export function LandscapePage({ children, ...otherProps }: PDFPageProps): ReactElement<PDFPageProps> {

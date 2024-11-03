@@ -6,6 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "start:server": "pnpm --filter ./packages/server run watch",
+    "build:reports": "pnpm --filter ./packages/reports run build",
     "start:reports": "pnpm --filter ./packages/reports run start:dev"
   },
   "packageManager": "pnpm@8.15.6",

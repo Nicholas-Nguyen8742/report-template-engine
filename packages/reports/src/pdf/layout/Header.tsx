@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
+import { Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import theme from '../../utils/styles';
 import logoImage from '../../../public/images/Logo-Icon.png';
 
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     fontSize: '22pt',
     lineHeight: 0.91,
     fontWeight: 200,
+    fontFamily: 'AauxNext',
     width: '180px',
     marginTop: '2px',
     marginLeft: '10px',
