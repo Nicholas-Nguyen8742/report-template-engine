@@ -5,8 +5,10 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
-    "start:api": "pnpm --filter ./packages/@api run watch",
+    "build": "pnpm run --stream -r build",
+    "build:api": "pnpm --filter ./packages/@api run build",
     "build:reports": "pnpm --filter ./packages/reports run build",
+    "start:api": "pnpm --filter ./packages/@api run watch",
     "start:reports": "pnpm --filter ./packages/reports run start:dev"
   },
   "packageManager": "pnpm@8.15.6",
