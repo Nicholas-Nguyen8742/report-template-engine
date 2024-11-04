@@ -5,7 +5,7 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
-    "start:server": "pnpm --filter ./packages/server run watch",
+    "start:api": "pnpm --filter ./packages/@api run watch",
     "build:reports": "pnpm --filter ./packages/reports run build",
     "start:reports": "pnpm --filter ./packages/reports run start:dev"
   },

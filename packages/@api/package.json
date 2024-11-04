@@ -1,5 +1,5 @@
 {
-  "name": "report-api",
+  "name": "report-template-engine-api",
   "version": "1.0.0",
   "author": "Nicholas Nguyen <NicholasNguyen8742@gmail.com> (https://github.com/Nicholas-Nguyen8742/)",
   "description": "API server to serve various types of reports (i.e. pdf / docx) w/ typescript, koa",
