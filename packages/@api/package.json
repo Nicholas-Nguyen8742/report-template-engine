@@ -7,8 +7,9 @@
   "main": "./dist/api/server.js",
   "type": "module",
   "scripts": {
-    "watch": "nodemon --watch src -e ts,tsx --exec tsx src/api/server.ts",
-    "start": "node ./dist/api/server.js"
+    "build": "tsc",
+    "start": "node ./dist/api/server.js",
+    "watch": "nodemon --watch src -e ts,tsx --exec tsx src/api/server.ts"
   },
   "dependencies": {
     "@api/reports": "workspace:*",
